@@ -145,7 +145,7 @@ data bpa22mod.QualErrorNoCollapse;
 	;
 run;
 ```
-[👨‍💻 View Code Snippet](CodeSnippet.sas)
+[👨‍💻 View Code Snippet](codes/CodeSnippet.sas)
 
 ---
 
