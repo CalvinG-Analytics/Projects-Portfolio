@@ -147,6 +147,12 @@ run;
 ```
 [👨‍💻 View Code Snippet](codes/CodeSnippet.sas)
 
+### Paired t-test result
+
+| Mean   | Std Dev | t   | p-value |
+|--------|---------|-----|---------|
+| -0.576 | 0.866   | -70 | <.0001  |
+
 ---
 
 ## 🔗 Related links
