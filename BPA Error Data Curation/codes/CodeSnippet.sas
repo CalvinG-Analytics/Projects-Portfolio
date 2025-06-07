@@ -15,6 +15,7 @@ data attention;
 	array nds_b{7} nds08_1 - nds08_7;
 	array nds_b2{7} nds08_2_1 - nds08_2_7;
 
+	* Keep track of missing values;
 	nm1 = 0; nm2 = 0; nm12 = 0;
 
 	do i = 1 to 14;
@@ -28,10 +29,14 @@ data attention;
 		attention_2 = attention_2 + (dsb{i} = 1);
 	end;
 
-	?
+	⋮
  
-	*attention_14;
+	*attention_14: DSB_LN;
+
+	*k: dummy variable for stopping point, l: track longest length correct, y: output variable;
 	k = 0; l = 2; y = .;
+
+	*Assign each span response to missing, correct, or incorrect;
 	do i = 1 to 13 by 2;
 		j = (i + 1) / 2;
 		if dsb{i} in (1,2) or dsb{i+1} in (1,2) then nds_b2{j} = 1;
@@ -39,6 +44,7 @@ data attention;
 		else nds_b2{j} = 0;
 	end;
 
+	*Assign longest length correct;
 	do until (k = 1);
 		if nds_b2{l} = 1 then l = l + 1;
 		else k = 1;
@@ -47,6 +53,9 @@ data attention;
 
 	if l > 2 then y = l;
 
+	***Deal with special cases having missing/omited responses at beginning;
+
+	*Examiner started on the span of length 3;
 	if y = . then do;
 		k = 0; l = 3; 
 		do until (k = 1);
@@ -58,6 +67,7 @@ data attention;
 		if l > 3 then y = l;
 	end;
 
+	*Examiner started on the span of length 4;
 	if y = . then do;
 		k = 0; l = 4; 
 		do until (k = 1);
@@ -69,21 +79,23 @@ data attention;
 		if l > 4 then y = l;
 	end;
 
+	*Assign short span scenarios to appropriate outcome;
 	if nds_b2{1} = 0 and nds_b2{2} in (.,0) then y = 0;
 	else if nds_b2{1} = 1 and nds_b2{2} in (.,0) then y = 2;
 	else if nds_b2{1} = . and nds_b2{2} in (0) then y = 1;
 	else if nds_b2{1} = . and nds_b2{2} in (.) and nds_b2{3} in (0) then y = 1;
 
+	*Assign outcome;
 	attention_14 = y;
 
-	? 
+	⋮ 
 
+	*Set missing when test is skipped;
 	if nm2 = 0 then do;
 		attention_2 = .;
 		attention_4 = .;
 		attention_14 = .;
 	end;
-
 
 	if ds08_01 = 1 then do;
 		if att{2} = . then att{2} = 0;
@@ -96,22 +108,22 @@ data attention;
 	keep attention_1 - attention_14;
 run;
 
-? 
+⋮ 
 
 data namesfirst;
 	set AnalyticErrorIndexes;
 	rename
-	? 
+	⋮ 
 	attention_14 = DSB_LN
-	? 
+	⋮ 
 	;
 run;
 
 data bpa22mod.QualErrorNoCollapse;
 	set namesfirst;
 	label
-	? 
+	⋮ 
 	DSB_LN = "Digit Span: Backward— Longest digit span with all correct numbers, regardless of sequence."
-	? 
+	⋮ 
 	;
 run;
