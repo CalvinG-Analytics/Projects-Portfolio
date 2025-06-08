@@ -81,7 +81,7 @@ I choose to use the paired t-test, as both variables are related, from the same 
 
 -  	- **Result**
 
-The full output is [here](Output/TestOutput.html), while the table below summarizes the test result.
+The full output is [here](https://calving-analytics.github.io/Projects-Portfolio/BPA%20Error%20Data%20Curation/Output/TestOutput.html), while the table below summarizes the test result.
 
 | μ<sub>LN</sub>   | μ<sub>Long</sub>   | μ<sub>diff</sub>    | Std Err | t-stat  | p-value |
 |------|------|-------|---------|----|---------|
