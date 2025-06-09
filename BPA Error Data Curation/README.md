@@ -14,7 +14,22 @@ Curated a comprehensive dataset of categorized errors made by the participants o
 
 
 ---
-## 🔧 Data Cleaning & Feature Engineering
+## 🔧 Data Curation Process
+
+- ### Introduction & Inputs
+
+Participants in the Framingham Heart Study Brain Aging Program (FHS-BAP) undergo periodic neuropsychological assessments throughout the study.  The assessment consist of a variety of mental activities across 20 test sections.  Raw data from each activity are collected and stored in SAS datasets.  This data curation project aggregates these raw data to create a centralized dataset of BPA errors.  The process involves thorough discussion with psychologists to determine professional definitions, categorization, and derivation of the error variables.
+
+
+- ### Data Cleaning & Feature Engineering
+
+**Data Cleaning**
+
+Data cleaning is an essential process in this project, to ensure accuracy and consistency.  Missing values are prevalent 
+
+**Feature Engineering**
+
+- ### Summary & Outputs
 ---
 
 ## 🛠️ Tools Used
