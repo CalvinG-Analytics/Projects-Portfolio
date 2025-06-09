@@ -12,8 +12,17 @@ Curated a comprehensive dataset of categorized errors made by the participants o
 - Coded dynamic SAS program capable of updating the output dataset with new entries
 - Documented the final dataset and the coding process through coding manual and programming protocol
 
-
 ---
+
+## 🛠️ Tools Used
+
+- **SAS 9.4**
+  - `PROC SQL`, `DATA step`, `multi-dimensional ARRAY`, `MERGE`, `DO loops`, `functions`, `logical operators`
+- Windows SAS environments
+- Excel
+  
+---
+
 ## 🔧 Data Curation Process
 
 - ### Introduction & Inputs
@@ -25,19 +34,19 @@ Participants in the Framingham Heart Study Brain Aging Program (FHS-BAP) undergo
 
 **Data Cleaning**
 
-Data cleaning is an essential process in this project, to ensure accuracy and consistency.  Missing values are prevalent 
+Data cleaning is an essential process in this project, to ensure accuracy and consistency.  Missing values are prevalent in the raw data, reasons for missing include omission by the participant, skipped over by the tester, or unknown/ineligible.  Curated features from input variables need to carefully consider missing values and their impact on the outcome.  For example, a binary variable where `YES` indicate a correct response would be coded as `NO` if the response is omitted but `missing` if it is unknown.
+
+Furthermore, various differences between individual tests must be harmonized.  These differences could include forms (long, short, remote), versions, question sets, and examiner discretion in skipping over certain questions. Form differences are taken into account via a dummy variable, allowing researchers the option to exclude exams fitting a certain form type.  Other types of differences are coded into derivation algorithms appropriately.
 
 **Feature Engineering**
 
+Error features consist of two types: original and derived.  Original variables are essentially copies of existing entries on the assessment form, except for missing values which are re-coded based on their missing type (Blank, Omitted, Unknown).  Derived variables are error measures derived from multiple entries.  Derivations could be simple like a sum of entries or complex with special considerations (see `DSB_LN` example in the Example Output Variable section).  For most of the derived variables, we need to consider missing values and dependencies on other related variables.  For example, the inputs of derivation algorithm are dependent on the question sets given.  The features are derived via SAS `data` steps, through extensive use of `array` syntax, `DO` loops, and logical operators.
+
 - ### Summary & Outputs
----
 
-## 🛠️ Tools Used
+The output is a single centralized dataset of over 140 BPA error variables accross 20 test sections.  It contains the records for over 9000 exams from over 5000 participants.  The dataset is currently available on the [FHS-BAP website](https://fhsbap.bu.edu/docs_main/qualitative_errors_in_neuropsychological_exams), multiple articles have been published using the dataset (see links).
 
-- **SAS 9.4**
-  - `PROC SQL`, `DATA step`, `multi-dimensional ARRAY`, `MERGE`, `DO loops`, `functions`, `logical operators`
-- Windows SAS environments
-- Excel
+Additionally, the curation process have been thoroughly documented via programming protocol and data dictionary.  The programming protocol contains the derivation formulas for all error variables as well as important usage notes.  The data dictionary contains the possible values or ranges for all variables, along with missing values and frequency counts for each variable. 
 
 ---
 
