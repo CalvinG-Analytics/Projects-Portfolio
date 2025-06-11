@@ -36,7 +36,7 @@ Participants in the Framingham Heart Study Brain Aging Program (FHS-BAP) undergo
 
 Data cleaning is an essential process in this project, to ensure accuracy and consistency.  Missing values are prevalent in the raw data, reasons for missing include omission by the participant, skipped over by the tester, or unknown/ineligible.  Curated features from input variables need to carefully consider missing values and their impact on the outcome.  For example, a binary variable where `YES` indicate a correct response would be coded as `NO` if the response is omitted but `missing` if it is unknown.
 
-Furthermore, various differences between individual tests must be harmonized.  These differences could include forms (long, short, remote), versions, question sets, and examiner discretion in skipping over certain questions. Form differences are taken into account via a dummy variable, allowing researchers the option to exclude exams fitting a certain form type.  Other types of differences are coded into derivation algorithms appropriately.
+Furthermore, various differences between individual tests must be harmonized.  These differences could include forms (long, short, remote), versions, question sets, and examiner discretion in skipping over certain questions. Form differences are taken into account via a dummy variable, allowing researchers the option to exclude exams fitting a certain form type.  Other types of differences are coded into derivation algorithms appropriately. 
 
 **Feature Engineering**
 
