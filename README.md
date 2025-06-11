@@ -8,4 +8,4 @@ Welcome to my GitHub portfolio! I'm a PhD Statistician with a strong foundation 
 
 | Project Title | Description | Tools | Tags |
 |---------------|-------------|-------|------|
-|[BPA Error Dataset Curation](<BPAErrorDataCuration/README.md>) | Curated a comprehensive dataset of errors participants made on Neuropsychological Assessments from raw data. |![SAS](https://tinyurl.com/saslogo999) | Data Cleaning & Curation, Feature Engineering
+|[BPA Error Dataset Curation](<BPAErrorDataCuration/>) | Curated a comprehensive dataset of errors participants made on Neuropsychological Assessments from raw data. |![SAS](https://tinyurl.com/saslogo999) | Data Cleaning & Curation, Feature Engineering
