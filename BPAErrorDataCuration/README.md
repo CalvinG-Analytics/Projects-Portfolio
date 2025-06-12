@@ -125,5 +125,5 @@ We can soundly conclude that there is a significant number of participants makin
 - [🌐FHS-BAP Errors Data Webpage with Coding Manual](https://fhsbap.bu.edu/docs_main/qualitative_errors_in_neuropsychological_exams)
 - [💻Programming Protocol](https://www.bu.edu/fhs/share/protocols/vr_npqerror_2021_a_1468s_protocol1.pdf)
 - 🎓Published Articles
- - [Gurnani et al., 2023](https://doi.org/10.1093/arclin/acad067.009)
- - [Ferretti et al., 2024](https://doi.org/10.1002/alz.13500)
+  - [Gurnani et al., 2023](https://doi.org/10.1093/arclin/acad067.009)
+  - [Ferretti et al., 2024](https://doi.org/10.1002/alz.13500)
