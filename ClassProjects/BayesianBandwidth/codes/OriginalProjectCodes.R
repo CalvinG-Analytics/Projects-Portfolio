@@ -6,7 +6,8 @@ library(plyr)
 library(magrittr)
 
 #Read in data, keep only NBA National leagues, and replace 0's with missing values
-A0 <- read.csv("ClassProjects\\BayesianBandwidth\\data\\team_season.txt", header = 1)
+
+A0 <- read.csv("..\\data\\team_season.txt", header = 1)
 A1 <- A0[A0$leag=='N',] ; A1[A1==0] <- NA
 A2 <- A1[,c(2,4:18,34:36)]
 
