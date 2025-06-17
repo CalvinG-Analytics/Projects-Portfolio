@@ -31,5 +31,5 @@ Welcome to my GitHub portfolio! I'm a PhD Statistician with a strong foundation 
 |*Research and Work* |||
 |[BPA Error Dataset Curation](<ResearchAndWorkProjects/BPAErrorDataCuration/>) | Curated a comprehensive dataset of errors participants made on Neuropsychological Assessments from raw data. |![SAS](https://tinyurl.com/saslogo999) | Neuropsychology | Data Cleaning & Curation, Feature Engineering, Documentation|
 |*Class Projects* |||
-|[Bayesian Bandwidth](<ClassProjects\BayesianBandwidth>) | Modeled **FG%** and **FT%** trend in the NBA over time, using nonparametric density with Bayesian bandwidth. |![R](https://img.shields.io/badge/R-276DC3?style=flat&logo=r&logoColor=white) | Sports | Bayesian Statistics, Nonparametric Density, Visualization |
+|[Bayesian Bandwidth](<ClassProjects/BayesianBandwidth>) | Modeled **FG%** and **FT%** trend in the NBA over time, using nonparametric density with Bayesian bandwidth. |![R](https://img.shields.io/badge/R-276DC3?style=flat&logo=r&logoColor=white) | Sports | Bayesian Statistics, Nonparametric Density, Visualization |
 |Still updating, please check back for more!|
