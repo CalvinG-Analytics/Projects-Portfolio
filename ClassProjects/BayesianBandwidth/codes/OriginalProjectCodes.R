@@ -24,7 +24,7 @@ h.bayes <- function(x,X,a,b){
   } ; R
 }
 
-#Kernel Density Estimation using Bayesian Bandwidth and Gausian Kernel
+#Kernel Density Estimation using Bayesian Bandwidth and Gaussian Kernel
 KDE <- function(x,h,X){
   n <- length(X); l <- length(x); R <- numeric(l)
   for (i in 1:l){
