@@ -1,0 +1,1 @@
+[Bayesian KDE Slider](https://catalyzeanalytics.shinyapps.io/Bayesian-KDE-ab-Slider/)
