@@ -66,15 +66,20 @@ ui <- fluidPage(
       selectInput("startyr", "Starting Year", choices = 1946:2004, selected= 1956),
       
       # Input: End year
-      selectInput("endyr", "Ending Year", choices = 1946:2004, selected = 1965)
+      selectInput("endyr", "Ending Year", choices = 1946:2004, selected = 1965),
     ),
     
     mainPanel(
-      h3("Distribution of NBA teams PPG in a given date range "),
+      # Output Seasons:
+      h3(textOutput("desc")),
+      
+      h4("Distribution of NBA teams PPG in a given date range "),
       plotlyOutput("KDEplot"),
       
-      h3("Bayesian Posterior Bandwidth (h)"),
-      plotlyOutput("BPBplot") 
+      h4("Bayesian Posterior Bandwidth (h)"),
+      plotlyOutput("BPBplot"), 
+      
+      paste("*One Team Season refers to one distinct team in one season (year).")
     )
   )
 )
@@ -153,6 +158,10 @@ server <- function(input, output, session) {
       add_lines(x = x.vals, y = h.post, type = 'scatter', mode = 'lines', name = "Bayesian Posterior Bandwidth") %>%
       layout(
         xaxis = list(title = "Teams PPG", dtick = 10), yaxis = list(title = "Bandwidth"))
+  })
+  
+  output$desc <- renderText({
+    paste0("Data involves ", length(X()), " Team Seasons* from ", input$startyr, " to ", input$endyr, ".")
   })
 }
 
