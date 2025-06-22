@@ -2,6 +2,9 @@
 
 ## 🚀 Overview
 
+This class project is originally the final project of my graduate course (MA 578, Bayesian Statistics) at Boston University.  My goal was to model complex distributions of NBA points scored using Bayesian and Kernel methods, followed by an assessment of the results.  I have since then updated my work by creating a Shiny dashboard that allows flexibility in choosing hyperparameters and timeframes, resulting in a clearer picture of the results.
+
+## 💻 Data
 ## 📑 Methods
 
 ## 📊 Results
@@ -9,10 +12,10 @@
 ## 💬 Discussion
 
 ## 🔧 Tools
-R, R Studio, Shiny, LaTeX
+R, R Studio, Shiny, VS Code, LaTeX
 
 ## 🔗 Links
-[R Shiny App: Bayesian KDE Slider](https://catalyzeanalytics.shinyapps.io/Bayesian-KDE-ab-Slider/)
+[Shiny App: Bayesian KDE Slider](https://catalyzeanalytics.shinyapps.io/Bayesian-KDE-ab-Slider/)
 
 ## 📚 References
 
