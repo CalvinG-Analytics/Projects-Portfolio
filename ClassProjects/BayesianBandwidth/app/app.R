@@ -39,10 +39,10 @@ A1 <- A0[A0$leag=='N',] ; A1[A1==0] <- NA
 A2 <- A1[,c(2,4:18,34:36)]
 
 ### Shiny App Codes
-x.start <- 60
-x.end <- 140
-
-x <- seq(x.start,x.end,.1)
+# x.start <- 60
+# x.end <- 140
+# 
+# x <- seq(x.start,x.end,.1)
 
 # ---- UI ----
 ui <- fluidPage(
@@ -118,14 +118,14 @@ server <- function(input, output, session) {
     ceiling(max(X()))
   })
   
-  x.seq <- reactive({
-    seq(X.min(),X.max(), .1)
-  })
-  
+  # x.seq <- reactive({
+  #   seq(X.min(),X.max(), .1)
+  # })
+
   
   # Output1: Compute and display posterior mean
   output$KDEplot <- renderPlotly({
-    x.vals <- x.seq()
+    x.vals <- seq(X.min(),X.max(), .1)
     X.vals <- X()
     alpha <- input$alpha
     beta <- input$beta
@@ -134,7 +134,7 @@ server <- function(input, output, session) {
     
   plot_ly() %>%
     add_lines(x = x.vals, y = density_vals, type = 'scatter', mode = 'lines', name = "KDE Curve") %>%
-    add_histogram(x = X.vals, xbins = list(start = x.start, end = x.end, size = 2), 
+    add_histogram(x = X.vals, xbins = list(start = X.min(), end = X.max(), size = 2), 
                   histnorm = "probability density", name = "Histogram", marker = list(color = "pink")) %>%
     layout(title = "",
       xaxis = list(title = "Teams PPG", dtick = 10), yaxis = list(title = "Density"), bargap = 0.1  
@@ -143,7 +143,7 @@ server <- function(input, output, session) {
   
   # Output2: Plot the posterior bandwidth
   output$BPBplot <- renderPlotly({
-    x.vals <- x.seq()
+    x.vals <- seq(X.min(),X.max(), .1)
     X.vals <- X()
     alpha <- input$alpha
     beta <- input$beta

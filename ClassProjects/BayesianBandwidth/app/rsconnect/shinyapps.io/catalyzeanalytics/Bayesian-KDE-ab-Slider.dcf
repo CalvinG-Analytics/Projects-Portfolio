@@ -5,6 +5,6 @@ account: catalyzeanalytics
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 14964607
-bundleId: 10497914
+bundleId: 10499354
 url: https://catalyzeanalytics.shinyapps.io/Bayesian-KDE-ab-Slider/
 version: 1
