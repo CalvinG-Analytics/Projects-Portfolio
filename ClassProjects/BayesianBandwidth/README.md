@@ -21,7 +21,7 @@ $$
 
 ## 🔧 Tools
 ![R](https://img.shields.io/badge/R-276DC3?style=flat&logo=r&logoColor=white)
-![R](https://img.shields.io/badge/RStudio-276DC3?style=flat&logo=r&logoColor=white)
+![RStudio](https://img.shields.io/badge/RStudio-276DC3?style=flat&logo=r&logoColor=white)
 ![Shiny](https://tinyurl.com/ShinyShields)
 ![Visual Studio Code](https://custom-icon-badges.demolab.com/badge/Visual%20Studio%20Code-0078d7.svg?logo=vsc&logoColor=white)
 ![LaTeX](https://img.shields.io/badge/LaTeX-008080?style=flat&logo=latex&logoColor=white)
@@ -33,4 +33,3 @@ $$
 ## 📚 References
 
 [Gangopadhyay, A., & Cheung, K. (2002). Bayesian approach to the choice of smoothing parameter in kernel density estimation. *Journal of nonparametric statistics*, 14(6), 655-664.](https://www.tandfonline.com/doi/abs/10.1080/10485250215320)
-
