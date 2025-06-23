@@ -8,7 +8,12 @@ This class project is originally the final project of my graduate course (MA 578
 
 ## 📑 Methods
 
-$\vec{x} = (x_1, x_2, \dots, x_n)$
+$\vec{X} = (X_1, X_2, \dots, X_n)$
+
+$$
+\vec{X} = (X_1, X_2, \dots, X_n)
+$$
+
 
 ## 📊 Results
 
