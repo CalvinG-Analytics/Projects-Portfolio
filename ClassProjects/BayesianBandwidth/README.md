@@ -5,7 +5,10 @@
 This class project is originally the final project of my graduate course (MA 578, Bayesian Statistics) at Boston University.  My goal was to model complex distributions of NBA points scored using Bayesian and Kernel methods, followed by an assessment of the results.  I have since then updated my work by creating a Shiny dashboard that allows flexibility in choosing hyperparameters and timeframes, resulting in a clearer picture of the results.
 
 ## 💻 Data
+
 ## 📑 Methods
+
+$\vec{x} = (x_1, x_2, \dots, x_n)$
 
 ## 📊 Results
 
