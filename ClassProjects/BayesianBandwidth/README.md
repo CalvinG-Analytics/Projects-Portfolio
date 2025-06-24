@@ -37,10 +37,10 @@ Instead, I used a nonparametric density estimation, which fits a smooth curve ba
 That is, we estimate $f(x)$, the true distribution of $x$ with:
 
 $$
-\hat{f}(x) = \frac{1}{n h} \sum_{i=1}^{n} K\left( \frac{x - X_i}{h} \right)^2
+\hat{f}(x | h, \vec{X}) = \frac{1}{n h} \sum_{i=1}^{n} K\left( \frac{x - X_i}{h} \right)^2
 $$
 
-![f_hat](https://latex.codecogs.com/png.image?\bg_white\dpi{120}\hat{f}_h(x)=\frac{1}{nh}\sum_{i=1}^nK\left(\frac{X_i-x}{h}\right))
+Where $\vec{X} = (X_1, X_2, \dots, X_n)$
 
 The KDE method is heavily influenced by the choice of the bandwidth $h$: too large and the estimate misses important features and creates bias, yet if it's too small the curve overfits to the noise and makes a poor estimate.  Many authors in literature have contrived methods for selecting an appropriate $h$, this project follows a Bayesian approach as described in (Gangopadhyay, 2002)[<sup>[I]</sup>](#ref1). 
 
@@ -56,7 +56,6 @@ $$
 \hat{f}(x) = \frac{1}{n h} \sum_{i=1}^{n} \frac{1}{\sqrt{2\pi}} \exp\left( -\frac{1}{2} \left( \frac{x - x_i}{h} \right)^2 \right)
 $$
 
-Where $\vec{X} = (X_1, X_2, \dots, X_n)$
 
 
 ## 📊 Results
