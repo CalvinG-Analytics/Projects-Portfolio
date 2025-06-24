@@ -22,7 +22,7 @@ Instead, I used a nonparametric density estimation, which fits a smooth curve ba
 
 That is, we estimate $f(x)$, the true distribution of $x$ with:
 
-`$\hat{f}_h(x)=\frac{1}{n h} \sum_{i=1}^n K\left(\frac{X_i-x}{h}\right)$`
+![f_hat](https://latex.codecogs.com/svg.image?\dpi{120}\hat{f}_h(x)=\frac{1}{nh}\sum_{i=1}^nK\left(\frac{X_i-x}{h}\right))
 
 
 Where $\vec{X} = (X_1, X_2, \dots, X_n)$
