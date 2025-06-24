@@ -24,7 +24,7 @@ That is, we estimate $f(x)$, the true distribution of $x$ with:
 
 ![f_hat](https://latex.codecogs.com/png.image?\bg_white\dpi{120}\hat{f}_h(x)=\frac{1}{nh}\sum_{i=1}^nK\left(\frac{X_i-x}{h}\right))
 
-
+The KDE method is heavily influenced by the choice of the bandwidth $h$: too large and the estimate misses important features and creates bias, yet if it's too small the curve overfits to the noise and makes a poor estimate.  Many authors in literature have contrived methods to choosing an appropriate $h$, this project follows a Bayesian approach[[I]](#ref1). 
 
 Where $\vec{X} = (X_1, X_2, \dots, X_n)$
 
@@ -47,5 +47,5 @@ Where $\vec{X} = (X_1, X_2, \dots, X_n)$
 [Shiny App: Bayesian KDE Slider](https://catalyzeanalytics.shinyapps.io/Bayesian-KDE-ab-Slider/)
 
 ## 📚 References
-
-[a] [Gangopadhyay, A., & Cheung, K. (2002). Bayesian approach to the choice of smoothing parameter in kernel density estimation. *Journal of nonparametric statistics*, 14(6), 655-664.](https://www.tandfonline.com/doi/abs/10.1080/10485250215320)
+<a name="ref1"></a>
+[I] [Gangopadhyay, A., & Cheung, K. (2002). Bayesian approach to the choice of smoothing parameter in kernel density estimation. *Journal of nonparametric statistics*, 14(6), 655-664.](https://www.tandfonline.com/doi/abs/10.1080/10485250215320)
