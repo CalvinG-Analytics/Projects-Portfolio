@@ -12,11 +12,11 @@ This analytics project uses publicly available NBA dataset `team_season.txt` con
 
 My main objective is estimating the distribution of **PPG** of each team in each season for a given timeframe.  Traditional parametric methods for the estimation requires making assumptions on the shape of the distribution, which may not hold in practice.  For example, assuming a normal distribution would not hold when examining the first 2 NBA decades `1946 - 1965` (**Figure 1**), as the distribution is clearly bimodal.
 
-**Figure 1.** Histogram of **PPG** from 1946 - 1965. [^a]
+**Figure 1.** Histogram of **PPG** from 1946 - 1965. [^1]
 
 ![1946-1965 Histogram](Visuals/Figure1-1946_1965_Histogram.png)
 
-[^a]: Screenshot is from my custom [Shiny Dashboard](https://catalyzeanalytics.shinyapps.io/Bayesian-KDE-ab-Slider/) made for this project, you can change the parameters and watch the output change.
+[^1]: Screenshot is from my custom [Shiny Dashboard](https://catalyzeanalytics.shinyapps.io/Bayesian-KDE-ab-Slider/) made for this project, you can change the parameters and watch the output change.
 
 Instead, I used a nonparametric density estimation, which fits a smooth curve based solely on the data.  My method of choice is the well-known Kernel Density Estimation (KDE), which fits a Kernel function using the data within a neighborhood of $x$.
 
@@ -49,4 +49,4 @@ Where $\vec{X} = (X_1, X_2, \dots, X_n)$
 
 ## 📚 References
 
-[1] [Gangopadhyay, A., & Cheung, K. (2002). Bayesian approach to the choice of smoothing parameter in kernel density estimation. *Journal of nonparametric statistics*, 14(6), 655-664.](https://www.tandfonline.com/doi/abs/10.1080/10485250215320)
+[a] [Gangopadhyay, A., & Cheung, K. (2002). Bayesian approach to the choice of smoothing parameter in kernel density estimation. *Journal of nonparametric statistics*, 14(6), 655-664.](https://www.tandfonline.com/doi/abs/10.1080/10485250215320)
