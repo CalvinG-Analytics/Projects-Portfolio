@@ -38,11 +38,14 @@ That is, we estimate $f(x)$, the true distribution of $x$ with:
 
 ![f_hat](https://latex.codecogs.com/png.image?\bg_white\dpi{120}\hat{f}_h(x)=\frac{1}{nh}\sum_{i=1}^nK\left(\frac{X_i-x}{h}\right))
 
-The KDE method is heavily influenced by the choice of the bandwidth $h$: too large and the estimate misses important features and creates bias, yet if it's too small the curve overfits to the noise and makes a poor estimate.  Many authors in literature have contrived methods for selecting an appropriate $h$, this project follows a Bayesian approach as described in (Gangopadhyay, 2002)[^[I]^](#ref1). 
+The KDE method is heavily influenced by the choice of the bandwidth $h$: too large and the estimate misses important features and creates bias, yet if it's too small the curve overfits to the noise and makes a poor estimate.  Many authors in literature have contrived methods for selecting an appropriate $h$, this project follows a Bayesian approach as described in (Gangopadhyay, 2002)[<sup>[I]</sup>](#ref1). 
+
+The Bayesian approach uses Bayes' Rule to construct a posterior distribution based on a prior distribution and the observed data.
+
+$P(A \mid B) = \frac{P(B \mid A) \cdot P(A)}{P(B)}$
+
 
 Where $\vec{X} = (X_1, X_2, \dots, X_n)$
-
-^test^
 
 
 ## 📊 Results
