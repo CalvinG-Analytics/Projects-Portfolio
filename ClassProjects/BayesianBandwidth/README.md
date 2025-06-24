@@ -37,7 +37,7 @@ Instead, I used a nonparametric density estimation, which fits a smooth curve ba
 That is, we estimate $f(x)$, the true distribution of $x$ with:
 
 $$
-\hat{f}(x | h, \vec{X}_n) = \frac{1}{n h} \sum_{i=1}^{n} K\left( \frac{x - X_i}{h} \right)^2
+\hat{f}(x | h, \vec{X}_{n}) = \frac{1}{n h} \sum_{i=1}^{n} K\left( \frac{x - X_i}{h} \right)^2
 $$
 
 Where $\vec{X}_n = (X_1, X_2, \dots, X_n)$
