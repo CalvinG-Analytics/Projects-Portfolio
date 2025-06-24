@@ -48,10 +48,10 @@ The Bayesian approach uses Bayes' Rule to construct a posterior distribution bas
 
 The Bayes Rule: $P(A \mid B) = \frac{P(B \mid A)  P(A)}{P(B)}$
 
-If we use a Gaussian Kernel in the KDE, where
+If we use a Gaussian Kernel in the KDE:
 $K(u) = \frac{1}{\sqrt{2\pi}} \exp({\frac{-u^2}{2}})$
 
-Results in the KDE resembling a Gaussian likelihood:
+The resulting KDE resembles a Gaussian likelihood:
 
 
 $$
