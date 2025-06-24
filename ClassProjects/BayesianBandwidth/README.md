@@ -53,7 +53,6 @@ $K(u) = \frac{1}{\sqrt{2\pi}} \exp({\frac{-u^2}{2}})$
 
 The resulting KDE resembles a Gaussian likelihood:
 
-
 $$
 \hat{f}(x | h, \vec{X}) = L(\vec{X} | h, x) = \frac{1}{\sqrt{2\pi} n h} \sum_{i=1}^{n} \exp\left( -\frac{1}{2} \left( \frac{x - x_i}{h} \right)^2 \right)
 $$
