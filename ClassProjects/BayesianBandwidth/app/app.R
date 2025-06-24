@@ -63,7 +63,7 @@ ui <- fluidPage(
                   min = 0.1, max = 5, value = 1, step = 0.1),
       
       # Input: Start year
-      selectInput("startyr", "Starting Year", choices = 1946:2004, selected= 1956),
+      selectInput("startyr", "Starting Year", choices = 1946:2004, selected= 1946),
       
       # Input: End year
       selectInput("endyr", "Ending Year", choices = 1946:2004, selected = 1965),
