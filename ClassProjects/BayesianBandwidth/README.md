@@ -46,7 +46,11 @@ Bayes Rule: $P(A \mid B) = \frac{P(B \mid A) \cdot P(A)}{P(B)}$
 
 If we use a Gaussian Kernel in the KDE: 
 
-$K(u) = \frac{1}{\sqrt{2\pi}} e^{-\frac{u^2}{2}}$
+$K(u) = \frac{1}{\sqrt{2\pi}} \exp({\frac{-u^2}{2}})$
+
+$$
+\hat{f}(x) = \frac{1}{n h} \sum_{i=1}^{n} \frac{1}{\sqrt{2\pi}} \exp\left( -\frac{1}{2} \left( \frac{x - x_i}{h} \right)^2 \right)
+$$
 
 Where $\vec{X} = (X_1, X_2, \dots, X_n)$
 
