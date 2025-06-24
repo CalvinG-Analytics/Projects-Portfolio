@@ -42,7 +42,7 @@ The KDE method is heavily influenced by the choice of the bandwidth $h$: too lar
 
 Where $\vec{X} = (X_1, X_2, \dots, X_n)$
 
-
+^test^
 
 
 ## 📊 Results
