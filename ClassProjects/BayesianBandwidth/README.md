@@ -46,7 +46,7 @@ The KDE method is heavily influenced by the choice of the bandwidth $h$: too lar
 
 The Bayesian approach uses Bayes' Rule to construct a posterior distribution based on a prior distribution and the likelihood function of observed data.
 
-Bayes Rule: $P(A \mid B) = \frac{P(B \mid A) \cdot P(A)}{P(B)}$
+The Bayes Rule: $P(A \mid B) = \frac{P(B \mid A)  P(A)}{P(B)}$
 
 If we use a Gaussian Kernel in the KDE, where
 $K(u) = \frac{1}{\sqrt{2\pi}} \exp({\frac{-u^2}{2}})$
