@@ -1,6 +1,6 @@
-# 👋 Hi, I'm Calvin
+# 🎓 Calvin Guan, PhD
 
-🎓 PhD Statistician | Freelancer Data Analyst & AI Contributor | Programming Expert
+Freelance Data Analyst & Statistical Consultant | Statistical Programming Expert | AI Expert Contributor
 
 [![LinkedIn](https://custom-icon-badges.demolab.com/badge/LinkedIn-0A66C2?logo=linkedin-white&logoColor=fff)](https://www.linkedin.com/in/calving-analytics/)
 [![Email](https://img.shields.io/badge/Email-D14836?style=flat&logo=gmail&logoColor=white)](mailto:CatalyzeAnalytics@outlook.com)

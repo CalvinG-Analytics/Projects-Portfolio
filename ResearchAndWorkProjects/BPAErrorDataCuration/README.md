@@ -2,6 +2,28 @@
 
 Curated a comprehensive dataset of categorized errors made by the participants on Framingham Heart Study’s Neuropsychological Exams (following the BPA guidelines).  Collaborated with researchers to define error types, their derivation algorithms, as well as cleaning and curation steps to process raw datasets.  
 
+---
+## 📃 Table of Contents
+- [🧠 Boston Process Approach (BPA) Errors Data Curation](#-boston-process-approach-bpa-errors-data-curation)
+  - [📃 Table of Contents](#-table-of-contents)
+  - [📌 Objectives](#-objectives)
+  - [🛠️ Tools Used](#️-tools-used)
+  - [🔧 Data Curation Process](#-data-curation-process)
+    - [Introduction \& Inputs](#introduction--inputs)
+    - [Data Cleaning \& Feature Engineering](#data-cleaning--feature-engineering)
+      - [Data Cleaning](#data-cleaning)
+      - [Feature Engineering](#feature-engineering)
+    - [Summary \& Outputs](#summary--outputs)
+  - [🔢 Example Output Variable](#-example-output-variable)
+    - [Motivation](#motivation)
+    - [Coding and Cleaning](#coding-and-cleaning)
+    - [Documentation](#documentation)
+    - [Sample data analysis](#sample-data-analysis)
+      - [Problem Description](#problem-description)
+      - [Method](#method)
+      - [Result](#result)
+      - [Conclusion](#conclusion)
+  - [🔗 Related links](#-related-links)
 
 ---
 
@@ -25,24 +47,24 @@ Curated a comprehensive dataset of categorized errors made by the participants o
 
 ## 🔧 Data Curation Process
 
-- ### Introduction & Inputs
+### Introduction & Inputs
 
 Participants in the Framingham Heart Study Brain Aging Program (FHS-BAP) undergo periodic neuropsychological assessments throughout the study.  The assessment consist of a variety of mental activities across 20 test sections.  Raw data from each activity are collected and stored in SAS datasets.  This data curation project aggregates these raw data to create a centralized dataset of BPA errors.  The process involves thorough discussion with psychologists to determine professional definitions, categorization, and derivation of the error variables.
 
 
-- ### Data Cleaning & Feature Engineering
+### Data Cleaning & Feature Engineering
 
-**Data Cleaning**
+#### Data Cleaning
 
 Data cleaning is an essential process in this project, to ensure accuracy and consistency.  Missing values are prevalent in the raw data, reasons for missing include omission by the participant, skipped over by the tester, or unknown/ineligible.  Curated features from input variables need to carefully consider missing values and their impact on the outcome.  For example, a binary variable where `YES` indicate a correct response would be coded as `NO` if the response is omitted but `missing` if it is unknown.
 
 Furthermore, various differences between individual tests must be harmonized.  These differences could include forms (long, short, remote), versions, question sets, and examiner discretion in skipping over certain questions. Form differences are taken into account via a dummy variable, allowing researchers the option to exclude exams fitting a certain form type.  Other types of differences are coded into derivation algorithms appropriately. 
 
-**Feature Engineering**
+#### Feature Engineering
 
 Error features consist of two types: original and derived.  Original variables are essentially copies of existing entries on the assessment form, except for missing values which are re-coded based on their missing type (Blank, Omitted, Unknown).  Derived variables are error measures derived from multiple entries.  Derivations could be simple like a sum of entries or complex with special considerations (see `DSB_LN` example in the Example Output Variable section).  For most of the derived variables, we need to consider missing values and dependencies on other related variables.  For example, the inputs of derivation algorithm are dependent on the question sets given.  The features are derived via SAS `data` steps, through extensive use of `array` syntax, `DO` loops, and logical operators.
 
-- ### Summary & Outputs
+### Summary & Outputs
 
 The output is a single centralized dataset of over 140 BPA error variables across 20 test sections.  It contains the records for over 9000 exams from over 5000 participants.  The dataset is currently available on the [FHS-BAP website](https://fhsbap.bu.edu/docs_main/qualitative_errors_in_neuropsychological_exams), multiple articles have been published using the dataset (see links).
 
@@ -54,13 +76,13 @@ Additionally, the curation process have been thoroughly documented via programmi
 
 This section demonstrates a sample derived variable `DSB_LN` from the curated dataset, the step-by-step approach to its derivation and documentation, as well as a simple analysis using the derived variable.
 
-- ### Motivation
+### Motivation
 
 As part of the assessment, participants are asked to repeat backwards sequences of increasing length (See below). We are interested in tracking the longest span that was answered correctly OR only containing sequencing errors, in other words, the numbers were correctly repeated regardless of order.  We capture that value in the variable `DSB_LN`.
 
 ![aCRF](Visuals/aCRF.png)
 
-- ### Coding and Cleaning
+### Coding and Cleaning
 
 The following code snippet creates the desired variable:
 
@@ -68,7 +90,7 @@ The following code snippet creates the desired variable:
 
 The coding deals with unique challenges to creating this variable, such as missing values, skipped test, and inconsistent starting lengths at the discretion of the examiner.  Based on recommendation from a psychology specialist, the longest span would require all previous spans to be correct as well.
 
-- ### Documentation
+### Documentation
 
 Descriptions, algorithms, and test categories of all variables are thoroughly documented in the Programming Protocol.  The record for DSB_LN is shown here:
 
@@ -84,9 +106,9 @@ Visualizing the distribution of `DSB_LN` via a histogram, we get:
 
 Highlighting that the longest length with correct numbers are roughly symmetric and centered around 5.
 
-- ### Sample data analysis
+### Sample data analysis
 
-- - **Motivation**
+#### Problem Description
 
 Another variable `DSB_Long` captures the longest correct span, where the sequence must be correctly repeated backwards.  It has the following distribution:
 
@@ -94,7 +116,7 @@ Another variable `DSB_Long` captures the longest correct span, where the sequenc
 
 We wish to test if there is a significant number of participants who made sequencing errors only on their incorrect span.
 
--  - **Method**
+#### Method
 
 This is a classic hypothesis testing problem, comparing whether the average `DSB_LN` value (μ<sub>LN</sub>) is greater than the average `DSB_Long` value (μ<sub>Long</sub>):
 
@@ -104,7 +126,7 @@ This is a classic hypothesis testing problem, comparing whether the average `DSB
 
 I choose to use the paired t-test, as both variables are related, from the same participants, and are roughly symmetric.
 
--   - **Result**
+#### Result
 
 The full output is [here](https://calving-analytics.github.io/Projects-Portfolio/BPA%20Error%20Data%20Curation/Output/TestOutput.html), while the table below summarizes the test result.
 
@@ -114,7 +136,7 @@ The full output is [here](https://calving-analytics.github.io/Projects-Portfolio
 
 Because of the large t-statistic and small p-value, **H₀** is rejected.
 
--	- **Conclusion**
+#### Conclusion
 
 We can soundly conclude that there is a significant number of participants making sequencing error in their first incorrect response.  Highlighting that the numbers are encoded in memory more strongly than their sequence.
 

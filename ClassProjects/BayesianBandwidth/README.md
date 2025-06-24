@@ -1,5 +1,19 @@
 # 🕵🏽‍♀️ Estimating Distribution of Points Scored in the NBA via Bayesian and Kernel Methods.
 
+## 📃 Table of Contents
+
+- [🕵🏽‍♀️ Estimating Distribution of Points Scored in the NBA via Bayesian and Kernel Methods.](#️-estimating-distribution-of-points-scored-in-the-nba-via-bayesian-and-kernel-methods)
+  - [📃 Table of Contents](#-table-of-contents)
+  - [🚀 Overview](#-overview)
+  - [💻 Data](#-data)
+  - [📑 Methods](#-methods)
+  - [📊 Results](#-results)
+  - [💬 Discussion](#-discussion)
+  - [🔧 Tools](#-tools)
+  - [🔗 Links](#-links)
+  - [📚 References](#-references)
+
+
 ## 🚀 Overview
 
 This class project is originally the final project of my graduate course (MA578: Bayesian Statistics) at Boston University.  My goal was to model complex distributions of NBA points scored using Bayesian and Kernel methods, followed by an assessment of the results.  I have since then updated my work by creating a Shiny dashboard that allows flexibility in choosing hyperparameters and timeframes, resulting in a clearer picture of the results.
