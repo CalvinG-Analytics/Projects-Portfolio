@@ -16,7 +16,7 @@ My main objective is estimating the distribution of **PPG** of each team in each
 
 ![1946-1965 Histogram](Visuals/Figure1-1946_1965_Histogram.png)
 
-[^1]: *Note:* Screenshot is from my custom Shiny App made for this project, the 
+[^1]: Screenshot is from my custom [Shiny Dashboard](https://catalyzeanalytics.shinyapps.io/Bayesian-KDE-ab-Slider/) made for this project, you can change the parameters and watch the output change.
 
 $\vec{X} = (X_1, X_2, \dots, X_n)$
 
