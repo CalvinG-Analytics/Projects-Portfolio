@@ -2,13 +2,21 @@
 
 ## 🚀 Overview
 
-This class project is originally the final project of my graduate course (MA 578, Bayesian Statistics) at Boston University.  My goal was to model complex distributions of NBA points scored using Bayesian and Kernel methods, followed by an assessment of the results.  I have since then updated my work by creating a Shiny dashboard that allows flexibility in choosing hyperparameters and timeframes, resulting in a clearer picture of the results.
+This class project is originally the final project of my graduate course (MA578: Bayesian Statistics) at Boston University.  My goal was to model complex distributions of NBA points scored using Bayesian and Kernel methods, followed by an assessment of the results.  I have since then updated my work by creating a Shiny dashboard that allows flexibility in choosing hyperparameters and timeframes, resulting in a clearer picture of the results.
 
 ## 💻 Data
 
 This analytics project uses publicly available NBA dataset `team_season.txt` containing season-level team performances from the league's inception to 2004 from the website https://www.basketball-reference.com/.  Each row represents a team in a specific season, and their key information such as wins, points scored, rebounds, and other metrics.  The focus of this project is on the **Points Per Game (PPG)** metric, calculated as the total points scored in the season `o_pts` divided by the number of games played `won + lost`.
 
 ## 📑 Methods
+
+My main objective is estimating the distribution of **PPG** of each team in each season for a given timeframe.  Traditional parametric methods for the estimation requires making assumptions on the shape of the distribution, which may not hold in practice.  For example, assuming a normal distribution would not hold when examining the first 2 NBA decades `1946 - 1965` (**Figure 1**), as the distribution is clearly bimodal.
+
+**Figure 1.** Histogram of **PPG** from 1946 - 1965. [^1]
+
+![1946-1965 Histogram](Visuals/Figure1-1946_1965_Histogram.png)
+
+[^1]: *Note:* Screenshot is from my custom Shiny App made for this project, the 
 
 $\vec{X} = (X_1, X_2, \dots, X_n)$
 
