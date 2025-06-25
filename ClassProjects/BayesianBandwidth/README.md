@@ -70,10 +70,10 @@ The bandwidth $h$ acts as the standard deviation parameter of a Gaussian distrib
 $$
 \hat{\pi}(h \mid x, \vec{X}) =
 \frac{
-\sum_{l=1}^n \left( \frac{1}{h^{2\alpha+2}} \right) \exp \left\{ -\frac{1}{h^2} \left( \frac{(X_i - x)^2}{2} + \frac{1}{\beta} \right) \right\}
+\sum_{l=1}^n ( \frac{1}{h^{2\alpha+2}} ) \exp \{ -\frac{1}{h^2} ( \frac{(X_i - x)^2}{2} + \frac{1}{\beta} ) \}
 }{
-\sum_{l=1}^n \left( \frac{\Gamma(\alpha + 1/2)}{2} \right)
-\left( \frac{(X_i - x)^2}{2} + \frac{1}{\beta} \right)^{-\alpha - 1/2}
+\sum_{l=1}^n ( \frac{\Gamma(\alpha + 1/2)}{2} )
+( \frac{(X_i - x)^2}{2} + \frac{1}{\beta} )^{-\alpha - 1/2}
 }
 $$
 
