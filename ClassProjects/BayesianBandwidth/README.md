@@ -107,7 +107,7 @@ I created an interactive [Shiny Dashboard](https://catalyzeanalytics.shinyapps.i
 
 - [Original Class Project Report](BayesianBandwidthPaper.pdf)
 
-  - The original report that captures the core idea without the interactive dashboard.  Instead I drew a density ridge plot over time to show how the **PPG** distribution evolves over time.  And I contrasted it to the distribution of Field Goal Percentage (**FG%**) and Free Throw Percentage (**FT%**).
+  - The original report that captures the core idea without the interactive dashboard.  Instead I drew a density ridge plot over time to show how the **PPG** distribution evolves over time.  It also include analyses on the distribution of Field Goal Percentage (**FG%**) and Free Throw Percentage (**FT%**).
      
 
 ## 📚 References
