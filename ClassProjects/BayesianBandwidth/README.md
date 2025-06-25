@@ -90,7 +90,7 @@ $h^*$ is a function of the data vector $\vec{X}$, the evaluation point $x$, and 
 
 ## 📊 Results & Visualizations
 
-I created an interactive [Shiny Dashboard](https://catalyzeanalytics.shinyapps.io/Bayesian-KDE-ab-Slider/) that implements the Bayesian KDE method on the NBA **PPG** data, allowing for inputs of $\alpha, \beta$, and date range.
+I created an interactive [Shiny Dashboard](https://catalyzeanalytics.shinyapps.io/Bayesian-KDE-ab-Slider/) that implements the Bayesian KDE method on the NBA **PPG** data, allowing for inputs of $\alpha, \beta$, and date range.  The dashboard clearly shows the effects of $\alpha, \beta$ on the KDE curve.
 
 ## 💬 Discussion
 
