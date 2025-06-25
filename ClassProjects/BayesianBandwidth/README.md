@@ -81,7 +81,7 @@ $$
 Hence. the best bandwidth $h^*$ is the posterior mean:
 
 $$
-h^*(x) = E[h \mid x, \vec{X}]= \frac{\Gamma(\alpha)}{\sqrt{2 \beta} \Gamma(\alpha+1 / 2)} \frac{\sum_{i=1}^n\{1 /(\beta(X_i-x)^2+2)\}^x}{\sum_{i=1}^n\{1 /(\beta(X_i-x)^2+2)\}^{\alpha+1 / 2}}
+h^*(x) = E[h \mid x, \vec{X}]= \frac{\Gamma(\alpha)}{\sqrt{2 \beta} \Gamma(\alpha+1 / 2)} \frac{\sum_{i=1}^n\{1 /(\beta(X_i-x)^2+2)\}^\alpha}{\sum_{i=1}^n\{1 /(\beta(X_i-x)^2+2)\}^{\alpha+1 / 2}}
 $$
 
 The derivation steps are written out in (Gangopadhyay, 2002)[<sup>[I]</sup>](#ref1). 
