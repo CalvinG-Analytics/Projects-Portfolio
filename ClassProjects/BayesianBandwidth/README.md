@@ -77,14 +77,11 @@ $$
 }
 $$
 
-<!-- $$
-\hat{\pi}\left(h \mid x, \vec{X}\right)=\frac{\sum_{l=1}^n\left(1 / h^{2 \alpha+2}\right) \exp \left\{-\left(1 / h^2\right)\left(\left(X_i-x\right)^2 / 2+1 / \beta\right)\right\}}{\sum_{l=1}^n(\Gamma(\alpha+1 / 2) / 2)\left\{\left(X_i-x\right)^2 / 2+1 / \beta\right\}^{-\alpha-1 / 2}}
-$$ -->
 
 Hence. the best bandwidth $h^*$ is the posterior mean:
 
 $$
-h^*(x) = E\left[h \mid x, \vec{X}\right]= \frac{\Gamma(\alpha)}{\sqrt{2 \beta} \Gamma(\alpha+1 / 2)} \frac{\sum_{i=1}^n\left\{1 /\left(\beta\left(X_i-x\right)^2+2\right)\right\}^x}{\sum_{i=1}^n\left\{1 /\left(\beta\left(X_i-x\right)^2+2\right)\right\}^{\alpha+1 / 2}}
+h^*(x) = E[h \mid x, \vec{X}]= \frac{\Gamma(\alpha)}{\sqrt{2 \beta} \Gamma(\alpha+1 / 2)} \frac{\sum_{i=1}^n\{1 /(\beta(X_i-x)^2+2)\}^x}{\sum_{i=1}^n\{1 /(\beta(X_i-x)^2+2)\}^{\alpha+1 / 2}}
 $$
 
 The derivation steps are written out in (Gangopadhyay, 2002)[<sup>[I]</sup>](#ref1). 
