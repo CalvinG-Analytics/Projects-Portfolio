@@ -24,7 +24,7 @@ This analytics project uses publicly available NBA dataset `team_season.txt` con
 
 ## 📑 Methods
 
-My main objective is estimating the distribution of **PPG** of each team in each season for a given timeframe.  Traditional parametric methods for the estimation requires making assumptions on the shape of the distribution, which may not hold in practice.  For example, assuming a normal distribution would not hold when examining the first 2 NBA decades `1946 - 1965` (**Figure 1**), as the distribution is clearly bimodal.
+My main objective is estimating the distribution of **PPG** of each team in each season for a given timeframe.  Traditional parametric methods for the estimation requires making assumptions on the shape of the distribution, which may not hold in practice.  For example, assuming a Gaussian distribution would not hold when examining the first 2 NBA decades `1946 - 1965` (**Figure 1**), as the distribution is clearly bimodal.
 
 **Figure 1.** Histogram of **PPG** from 1946 - 1965. [^1]
 
@@ -46,18 +46,38 @@ The KDE method is heavily influenced by the choice of the bandwidth $h$: too lar
 
 The Bayesian approach uses Bayes' Rule to construct a posterior distribution based on a prior distribution and the likelihood function of observed data.
 
-The Bayes Rule: $P(A \mid B) = \frac{P(B \mid A)  P(A)}{P(B)}$
+**The Bayes Rule**
 
-If we use a Gaussian Kernel in the KDE:
+$P(A|B) = \frac{P(B|A)  P(A)}{P(B)}$
+
+**Posterior Distribution Formula**
+
+$\pi(h|x,\vec{X}) = \frac{L(\vec{X} | h, x)  \pi(h)}{\int{L(\vec{X} | h, x ) \pi(h) dh}}$
+
+
+If we use a **Gaussian Kernel** in the KDE
+
 $K(u) = \frac{1}{\sqrt{2\pi}} \exp({\frac{-u^2}{2}})$
 
-The resulting KDE resembles a Gaussian likelihood:
+The resulting KDE resembles a Gaussian likelihood centered at $x$:
 
 $$
 \hat{f}(x | h, \vec{X}) = L(\vec{X} | h, x) = \frac{1}{\sqrt{2\pi} n h} \sum_{i=1}^{n} \exp\left( -\frac{1}{2} \left( \frac{x - X_i}{h} \right)^2 \right)
 $$
 
+The bandwidth $h$ acts as the standard deviation parameter of a Gaussian distribution, therefore it has the Inverse-Gamma conjugate prior: $\pi(h) \sim IG(\alpha, \beta)$.  As such, the estimated posterior distribution of $h$ has a closed-form solution:
 
+$$
+\hat{\pi}\left(h \mid x, \vec{X}\right)=\frac{\sum_{l=1}^n\left(1 / h^{2 \alpha+2}\right) \exp \left\{-\left(1 / h^2\right)\left(\left(X_i-x\right)^2 / 2+1 / \beta\right)\right\}}{\sum_{l=1}^n(\Gamma(\alpha+1 / 2) / 2)\left\{\left(X_i-x\right)^2 / 2+1 / \beta\right\}^{-\alpha-1 / 2}}
+$$
+
+Hence. the best bandwidth $h^*$ is the posterior mean:
+
+$$
+h^*(x) = E\left[h \mid x, \vec{X}\right]= \frac{\Gamma(\alpha)}{\sqrt{2 \beta} \Gamma(\alpha+1 / 2)} \frac{\sum_{i=1}^n\left\{1 /\left(\beta\left(X_i-x\right)^2+2\right)\right\}^x}{\sum_{i=1}^n\left\{1 /\left(\beta\left(X_i-x\right)^2+2\right)\right\}^{\alpha+1 / 2}}
+$$
+
+The derivation steps are written out in (Gangopadhyay, 2002)[<sup>[I]</sup>](#ref1). 
 
 ## 📊 Results
 
