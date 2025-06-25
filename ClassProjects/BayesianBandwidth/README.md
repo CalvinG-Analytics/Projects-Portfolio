@@ -7,7 +7,7 @@
   - [🚀 Overview](#-overview)
   - [💻 Data](#-data)
   - [📑 Methods](#-methods)
-  - [📊 Results](#-results)
+  - [📊 Results \& Visualizations](#-results--visualizations)
   - [💬 Discussion](#-discussion)
   - [🔧 Tools](#-tools)
   - [🔗 Links](#-links)
@@ -84,9 +84,13 @@ $$
 h^*(x) = E[h \mid x, \vec{X}]= \frac{\Gamma(\alpha)}{\sqrt{2 \beta} \Gamma(\alpha+1 / 2)} \frac{\sum_{i=1}^n[1 /(\beta(X_i-x)^2+2)]^\alpha}{\sum_{i=1}^n[1 /(\beta(X_i-x)^2+2)]^{\alpha+1 / 2}}
 $$
 
-The derivation steps are written out in (Gangopadhyay, 2002)[<sup>[I]</sup>](#ref1). 
+The derivation steps are written out in (Gangopadhyay, 2002)[<sup>[I]</sup>](#ref1).
 
-## 📊 Results
+$h^*$ is a function of the data vector $\vec{X}$, the evaluation point $x$, and the prior hyperparameters $\alpha, \beta$.  Note it is unnecessary to optimize $\alpha, \beta$ as the method outperforms traditional bandwidth selection methods as long as the hyperparameters are reasonable [<sup>[I]</sup>](#ref1).  Reasonable hyperparameters are ones that produces bandwidths that are neither too narrow or wide, to avoid high bias and variance.  Nevertheless, a potential optimization method is proposed in the Discussion section.
+
+## 📊 Results & Visualizations
+
+I created an interactive [Shiny Dashboard](https://catalyzeanalytics.shinyapps.io/Bayesian-KDE-ab-Slider/) that implements the Bayesian KDE method on the NBA **PPG** data, allowing for inputs of $\alpha, \beta$, and date range.
 
 ## 💬 Discussion
 
@@ -99,7 +103,12 @@ The derivation steps are written out in (Gangopadhyay, 2002)[<sup>[I]</sup>](#re
 
 
 ## 🔗 Links
-[Shiny App: Bayesian KDE Slider](https://catalyzeanalytics.shinyapps.io/Bayesian-KDE-ab-Slider/)
+- [Shiny App: Bayesian KDE Slider](https://catalyzeanalytics.shinyapps.io/Bayesian-KDE-ab-Slider/)
+
+- [Original Class Project Report](BayesianBandwidthPaper.pdf)
+
+  - The original report that captures the core idea without the interactive dashboard.  Instead I drew a density ridge plot over time to show how the **PPG** distribution evolves over time.  And I contrasted it to the distribution of Field Goal Percentage (**FG%**) and Free Throw Percentage (**FT%**).
+     
 
 ## 📚 References
 <a name="ref1"></a>
