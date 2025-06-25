@@ -77,9 +77,9 @@ $$
 }
 $$
 
-$$
+<!-- $$
 \hat{\pi}\left(h \mid x, \vec{X}\right)=\frac{\sum_{l=1}^n\left(1 / h^{2 \alpha+2}\right) \exp \left\{-\left(1 / h^2\right)\left(\left(X_i-x\right)^2 / 2+1 / \beta\right)\right\}}{\sum_{l=1}^n(\Gamma(\alpha+1 / 2) / 2)\left\{\left(X_i-x\right)^2 / 2+1 / \beta\right\}^{-\alpha-1 / 2}}
-$$
+$$ -->
 
 Hence. the best bandwidth $h^*$ is the posterior mean:
 
