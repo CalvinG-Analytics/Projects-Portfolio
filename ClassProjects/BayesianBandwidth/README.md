@@ -138,11 +138,11 @@ $$
 While the underlying distribution $f(x)$ is always unknown in real data, it can be estimated using a cross-validation approach such as the Least-Squares Cross-Validation (LSCV):
 
 $$
-\text{LSCV}(\alpha{}, \beta{})=\int \hat{f}_{\alpha{}, \beta{}}^2(x) d x-\frac{2}{n} \sum_{i=1}^n \hat{f}_{\alpha{}, \beta{},-i}\left(X_i\right)
+\text{LSCV}(\alpha, \beta)=\int \hat{f}_{\alpha, \beta}^2(x) d x-\frac{2}{n} \sum_{i=1}^n \hat{f}_{\alpha, \beta,-i}\left(X_i\right)
 $$
 
 $$
-\text{LSCV}(\alpha, \beta)
+\int \hat{f}_{\alpha, \beta}^2(x) d x
 $$
 
 Therefore, minimizing LSCV over a grid of $\alpha \text{ and } \beta$ values will result in the optimizers $\alpha^*, \beta^*$
