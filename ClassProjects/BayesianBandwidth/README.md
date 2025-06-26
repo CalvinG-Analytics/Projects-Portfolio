@@ -64,9 +64,7 @@ The resulting KDE resembles a Gaussian likelihood centered at $x$:
 $$
 \hat{f}(x | h, \vec{X}) = L(\vec{X} | h, x) = \frac{1}{\sqrt{2\pi} n h} \sum_{i=1}^{n} \exp\left( -\frac{1}{2} \left( \frac{x - X_i}{h} \right)^2 \right)
 $$
-
 The bandwidth $h$ acts as the standard deviation parameter of a Gaussian distribution, therefore it has the Inverse-Gamma conjugate prior: $\pi(h) \sim IG(\alpha, \beta)$.  As such, the estimated posterior distribution of $h$ has a closed-form solution:
-
 $$
 \hat{\pi}(h \mid x, \vec{X}) =
 \frac{
@@ -90,7 +88,16 @@ $h^*$ is a function of the data vector $\vec{X}$, the evaluation point $x$, and 
 
 ## 📊 Results & Visualizations
 
-I created an interactive [Shiny Dashboard](https://catalyzeanalytics.shinyapps.io/Bayesian-KDE-ab-Slider/) that implements the Bayesian KDE method on the NBA **PPG** data, allowing for inputs of $\alpha, \beta$, and date range.  The dashboard clearly shows the effects of $\alpha, \beta$ on the KDE curve.
+I created an interactive [Shiny Dashboard](https://catalyzeanalytics.shinyapps.io/Bayesian-KDE-ab-Slider/) that implements the Bayesian KDE method on the NBA **PPG** data, allowing for inputs of $\alpha, \beta$, and date range.  The dashboard clearly shows the effects of $\alpha, \beta$ on the bandwidth and KDE curve.   $h^*$ tends to decrease as either $\alpha \text{ or } \beta$ increases, but each parameter has a distinct effect on the KDE curve.  $\alpha$ controls the height of the curve: a tiny $\alpha$ gives a flat curve that is mostly unaffected by the data, and increasing it allows the shape to vary in height and fits closely to the histogram (**Figure 2**).
+
+**Figure 2**. KDE curves for $\alpha = .1$ (left) and $\alpha = 5$ (right) 
+<!-- ![F2a01](Visuals\Figure2_a01.png)
+![F2a5](Visuals\Figure2_a5.png) -->
+
+<p align="center">
+  <img src="Visuals\Figure2_a01.png" alt="F2a01" width="45%" />
+  <img src="Visuals\Figure2_a5.png)" alt="F2a5" width="45%" />
+</p>
 
 ## 💬 Discussion
 
