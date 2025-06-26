@@ -144,7 +144,7 @@ $$
 \text{MISE}(\alpha, \beta) = \int \left[ \text{Bias}^2(\hat{f}_{\alpha, \beta}(x)) + \text{Var}(\hat{f}\_{\alpha, \beta}(x)) \right] dx
 $$
 
-While the underlying distribution $f(x)$ is always unknown in real data, it can be estimated using a cross-validation approach such as the Least-Squares Cross-Validation (LSCV):
+While the underlying distribution $f(x)$ is always unknown in real data, it can be estimated using a cross-validation approach such as the Least-Squares Cross-Validation (LSCV)[<sup>[III]</sup>](#ref3):
 
 $$
 \text{LSCV}(\alpha, \beta)=\int \hat{f}\_{\alpha, \beta}^2(x) d x-\frac{2}{n} \sum_{i=1}^n \hat{f}\_{\alpha, \beta,-i}\left(X_i\right)
@@ -170,7 +170,10 @@ Therefore, minimizing LSCV over a grid of $\alpha \text{ and } \beta$ values wil
 
 ## 📚 References
 <a name="ref1"></a>
-[I] [Gangopadhyay, A., & Cheung, K. (2002). Bayesian approach to the choice of smoothing parameter in kernel density estimation. *Journal of nonparametric statistics*, 14(6), 655-664.](https://www.tandfonline.com/doi/abs/10.1080/10485250215320)
+[I] [Gangopadhyay, A., & Cheung, K. (2002). *Bayesian approach to the choice of smoothing parameter in kernel density estimation.* Journal of nonparametric statistics, 14(6), 655-664.](https://www.tandfonline.com/doi/abs/10.1080/10485250215320)
 
 <a name="ref2"></a>
-[II] [Wasserman, Larry. Lecture Notes for Statistics 240: Nonparametric Statistics. University of California, Berkeley, n.d.](https://www.stat.berkeley.edu/~csun/stat240/)
+[II] [Wasserman, Larry. *Lecture Notes for Statistics 240: Nonparametric Statistics*. University of California, Berkeley, n.d.](https://www.stat.berkeley.edu/~stark/Teach/S240/Notes/ch10.pdf?utm_source=chatgpt.com)
+
+<a name="ref3"></a>
+[III] Wand, M. P., and M. C. Jones. *Kernel Smoothing*. Chapman & Hall, 1995.
