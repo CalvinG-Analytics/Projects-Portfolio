@@ -126,15 +126,22 @@ Note that any reasonable $\alpha\text{ and }\beta$ can produce a well-fit curve,
 While the Bayesian KDE approach performs well without the need to optimize, one may nonetheless wish to come up with an optimization method.  One convenient measure to judge the performance of a density estimator is the Mean Integrated Squared Error (MISE):
 
 $$
-\text{MISE}(h)=\mathbb{E}\left[\int\left(\hat{f}_h(x)-f(x)\right)^2 d x\right]
+\text{MISE}(\alpha, \beta)=\mathbb{E}\left[\int\left(\hat{f}_{\alpha, \beta}(x)-f(x)\right)^2 d x\right]
 $$
 
 which is the equivalent to a function of the bias and variance, thus naturally taking account of the bias-variance trade-off[<sup>[II]</sup>](#ref2):
 
 $$
-\mathrm{MISE}(h) = \int \left[ \text{Bias}^2(\hat{f}_h(x)) + \text{Var}(\hat{f}_h(x)) \right] dx
+\mathrm{MISE}(\alpha, \beta) = \int \left[ \text{Bias}^2(\hat{f}_{\alpha, \beta}(x)) + \text{Var}(\hat{f}_{\alpha, \beta}(x)) \right] dx
 $$
 
+While the underlying distribution $f(x)$ is always unknown in real data, it can be estimated using a cross-validation approach such as the Least-Squares Cross-Validation (LSCV):
+
+$$
+\text{LSCV}(\alpha, \beta)=\int \hat{f}_{\alpha, \beta}^2(x) d x-\frac{2}{n} \sum_{i=1}^n \hat{f}_{\alpha, \beta,-i}\left(X_i\right)
+$$
+
+Therefore, minimizing LSCV over a grid of $\alpha \text{ and } \beta$ values will result in the optimizers $\alpha^*, \beta^*$
 
 ## 🔧 Tools
 ![R](https://img.shields.io/badge/R-276DC3?style=flat&logo=r&logoColor=white)
