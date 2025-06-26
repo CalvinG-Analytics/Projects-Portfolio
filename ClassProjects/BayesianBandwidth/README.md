@@ -142,7 +142,7 @@ $$
 $$
 
 $$
-\frac{2}{n} \sum_{i=1}^n 
+\hat{f}_{\alpha, \beta,-i}\left(X_i\right)
 $$
 
 Therefore, minimizing LSCV over a grid of $\alpha \text{ and } \beta$ values will result in the optimizers $\alpha^*, \beta^*$
