@@ -88,15 +88,32 @@ $h^*$ is a function of the data vector $\vec{X}$, the evaluation point $x$, and 
 
 ## 📊 Results & Visualizations
 
-I created an interactive [Shiny Dashboard](https://catalyzeanalytics.shinyapps.io/Bayesian-KDE-ab-Slider/) that implements the Bayesian KDE method on the NBA **PPG** data, allowing for inputs of $\alpha, \beta$, and date range.  The dashboard clearly shows the effects of $\alpha, \beta$ on the bandwidth and KDE curve.   $h^*$ tends to decrease as either $\alpha \text{ or } \beta$ increases, but each parameter has a distinct effect on the KDE curve.  $\alpha$ controls the height of the curve: a tiny $\alpha$ gives a flat curve that is mostly unaffected by the data, and increasing it allows the shape to vary in height and fits closely to the histogram (**Figure 2**).
+I created an interactive [Shiny Dashboard](https://catalyzeanalytics.shinyapps.io/Bayesian-KDE-ab-Slider/) that implements the Bayesian KDE method on the NBA **PPG** data, allowing for inputs of $\alpha, \beta$, and date range.  The dashboard clearly shows the effects of $\alpha, \beta$ on the bandwidth and KDE curve.   $h^*$ tends to decrease as either $\alpha \text{ or } \beta$ increases, but each parameter has a distinct effect on the KDE curve.  
 
-**Figure 2**. KDE curves for $\alpha = .1$ (left) and $\alpha = 5$ (right) 
-<!-- ![F2a01](Visuals\Figure2_a01.png)
-![F2a5](Visuals\Figure2_a5.png) -->
+$\alpha$ controls the height of the curve: a tiny $\alpha$ gives a flat curve that is mostly unaffected by the data, and increasing it allows the shape to vary in height and fits closely to the histogram (**Figure 2**).
+
+**Figure 2**. KDE curves for $\alpha = .1$ (left) and $\alpha = 5$ (right), in each case $\beta = .1$
 
 <p align="center">
-  <img src="Visuals\Figure2_a01.png" alt="F2a01" width="45%" />
-  <img src="Visuals\Figure2_a5.png)" alt="F2a5" width="45%" />
+  <img src="Visuals\Figure2_a01.png" alt="F2a01" width="45%" height ="300"/>
+  <img src="Visuals\Figure2_a5.png" alt="F2a5" width="45%" height ="300"/>
+</p>
+
+Meanwhile, $\beta$ determines the smoothness of the curve, a tiny $\beta$ produces a very smooth curve, and increasing it will make the curve more rough and jagged (**Figure 3**).
+
+**Figure 3**. KDE curves for $\beta = .1$ (left) and $\beta = 3$ (right), in each case $\alpha = 2$
+
+<p align="center">
+  <img src="Visuals\F3b01.jpeg" alt="F3b01" width="45%" height ="300"/>
+  <img src="Visuals\F3b3.jpeg" alt="F3b3" width="45%" height ="300"/>
+</p>
+
+Recall that to pick a good fitting curve, it cannot be too flat nor too jagged.  As a flat curve would create bias and miss the true distribution, while a jagged curve overfits to the noise and make a poor estimator for new data.  I used the interactive dashboard to pick what appears to be a good fit, using $\alpha = 1.2 \text{ and } \beta = .4$ (**Figure 4**).
+
+**Figure 4**. A well-fit curve, $\alpha = 1.2 \text{ and } \beta = .4$
+
+<p align="center">
+  <img src="Visuals\F4.jpeg" alt="F3b01" width="60%" height ="350"/>
 </p>
 
 ## 💬 Discussion
