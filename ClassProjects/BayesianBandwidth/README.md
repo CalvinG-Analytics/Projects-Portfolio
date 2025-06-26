@@ -17,11 +17,11 @@
 
 ## 🚀 Overview
 
-This class project is originally the final project of my graduate course (MA578: Bayesian Statistics) at Boston University.  My goal was to model complex distributions of NBA points scored using Bayesian and Kernel methods, followed by an assessment of the results.  I have since then updated my work by creating a Shiny dashboard that allows flexibility in choosing hyperparameters and timeframes, resulting in a clearer picture of the results.
+This class project is originally the final project of my graduate course (MA578: Bayesian Statistics) at Boston University.  My goal was to model complex distributions of NBA points scored using Bayesian and Kernel methods, followed by an assessment of the results.  I have since then updated my work by creating a Shiny dashboard that allows flexibility in choosing hyperparameters and timeframes, making it easy to examine how they affect the resulting estimate.
 
 ## 💻 Data
 
-This analytics project uses publicly available NBA dataset `team_season.txt` containing season-level team performances from the league's inception to 2004 from the website https://www.basketball-reference.com/.  Each row represents a team in a specific season, and their key information such as wins, points scored, rebounds, and other metrics.  The focus of this project is on the **Points Per Game (PPG)** metric, calculated as the total points scored in the season `o_pts` divided by the number of games played `won + lost`.
+This analytics project uses publicly available NBA dataset `team_season.txt` containing season-level team performances from the league's inception to 2004 (https://www.basketball-reference.com/).  Each row represents a team in a specific season, while the columns have key information such as wins, points scored, rebounds, and other metrics.  The focus of this project is on the **Points Per Game (PPG)** metric, calculated as the total points scored in the season `o_pts` divided by the number of games played `won + lost`.
 
 ## 📑 Methods
 
@@ -33,17 +33,17 @@ My main objective is estimating the distribution of **PPG** of each team in each
 
 [^1]: Screenshot is from my custom [Shiny Dashboard](https://catalyzeanalytics.shinyapps.io/Bayesian-KDE-ab-Slider/) made for this project, you can change the parameters and watch the output change.
 
-Instead, I used a nonparametric density estimation, which fits a smooth curve based solely on the data.  My method of choice is the well-known Kernel Density Estimation (KDE), which fits a Kernel function using the data within a neighborhood of $x$.
+Instead, I used a nonparametric density estimation that fits a smooth curve based solely on the data.  My method of choice is the well-known Kernel Density Estimation (KDE), which fits a Kernel function using the data within a neighborhood of $x$.
 
 That is, we estimate $f(x)$, the true distribution of $x$ with:
 
 $$
-\hat{f}(x | h, \vec{X}) = \frac{1}{n h} \sum_{i=1}^{n} K\left( \frac{x - X_i}{h} \right)^2
+\hat{f}\_h(x |\vec{X}) = \frac{1}{n h} \sum_{i=1}^{n} K\left( \frac{x - X_i}{h} \right)^2
 $$
 
 Where $\vec{X} = (X_1, X_2, \dots, X_n)$
 
-The KDE method is heavily influenced by the choice of the bandwidth $h$: too large and the estimate misses important features and creates bias, yet if it's too small the curve overfits to the noise and makes a poor estimate.  Many authors in literature have contrived methods for selecting an appropriate $h$, this project follows a Bayesian approach as described in (Gangopadhyay, 2002)[<sup>[I]</sup>](#ref1). 
+The KDE method is heavily influenced by the choice of the bandwidth $h$: too large and the estimate misses important features and creates bias, too small and the curve overfits to the noise and makes a poor estimate.  Many authors in literature have contrived methods for selecting an appropriate $h$, this project follows a Bayesian approach as described in (Gangopadhyay, 2002)[<sup>[I]</sup>](#ref1). 
 
 The Bayesian approach uses Bayes' Rule to construct a posterior distribution based on a prior distribution and the likelihood function of observed data.
 
@@ -63,8 +63,9 @@ $K(u) = \frac{1}{\sqrt{2\pi}} \exp({\frac{-u^2}{2}})$
 The resulting KDE resembles a Gaussian likelihood centered at $x$:
 
 $$
-\hat{f}(x | h, \vec{X}) = L(\vec{X} | h, x) = \frac{1}{\sqrt{2\pi} n h} \sum_{i=1}^{n} \exp\left( -\frac{1}{2} \left( \frac{x - X_i}{h} \right)^2 \right)
+\hat{f}\_h(x |\vec{X}) = L(\vec{X} | h, x) = \frac{1}{\sqrt{2\pi} n h} \sum_{i=1}^{n} \exp\left( -\frac{1}{2} \left( \frac{x - X_i}{h} \right)^2 \right)
 $$
+
 The bandwidth $h$ acts as the standard deviation parameter of a Gaussian distribution, therefore it has the Inverse-Gamma conjugate prior: $\pi(h) \sim IG(\alpha, \beta)$.  As such, the estimated posterior distribution of $h$ has a closed-form solution:
 $$
 \hat{\pi}(h \mid x, \vec{X}) =
@@ -85,7 +86,7 @@ $$
 
 The derivation steps are written out in (Gangopadhyay, 2002)[<sup>[I]</sup>](#ref1).
 
-$h^*$ is a function of the data vector $\vec{X}$, the evaluation point $x$, and the prior hyperparameters $\alpha, \beta$.  Note it is unnecessary to optimize $\alpha, \beta$ as the method outperforms traditional bandwidth selection methods as long as the hyperparameters are reasonable [<sup>[I]</sup>](#ref1).  Reasonable hyperparameters are ones that produces bandwidths that are neither too narrow or wide, to avoid high bias and variance.  Nevertheless, a potential optimization method is proposed in the Discussion section.
+$h^*$ is a function of the data vector $\vec{X}$, the evaluation point $x$, and the prior hyperparameters $\alpha, \beta$.  Note it is unnecessary to optimize $\alpha, \beta$ as the method outperforms traditional bandwidth selection methods as long as the hyperparameters are reasonable [<sup>[I]</sup>](#ref1).  Reasonable hyperparameters are ones that produces bandwidths that are neither too narrow (high variance) or wide (high bias).  Nevertheless, a potential optimization method is proposed in the Discussion section.
 
 ## 📊 Results & Visualizations
 
@@ -109,17 +110,20 @@ Meanwhile, $\beta$ determines the smoothness of the curve, a tiny $\beta$ produc
   <img src="Visuals\F3b3.jpeg" alt="F3b3" width="45%" height ="300"/>
 </p>
 
-Recall that to pick a good fitting curve, it cannot be too flat nor too jagged.  As a flat curve would create bias and miss the true distribution, while a jagged curve overfits to the noise and make a poor estimator for new data.  I used the interactive dashboard to pick what appears to be a good fit, using $\alpha = 1.2 \text{ and } \beta = .4$ (**Figure 4**).
+Recall that picking a good fitting curve means it cannot be too flat nor too jagged.  As a flat curve would create bias and miss the true distribution, while a jagged curve overfits to the noise and make a poor estimator for new data.  I used the interactive dashboard to pick what appears to be a good fit, using $\alpha = 1.2 \text{ and } \beta = .4$ (**Figure 4**).  The bandwidth $h^*(x)$ is increasingly narrower with more data points near the evaluation point $(x)$.
 
-**Figure 4**. A well-fit curve, $\alpha = 1.2 \text{ and } \beta = .4$
+**Figure 4**. A well-fit curve, $\alpha = 1.2 \text{ and } \beta = .4$ (left), and the resulting bandwidth $h^*$ (right) 
 
 <p align="center">
-  <img src="Visuals\F4.jpeg" alt="F3b01" width="60%" height ="350"/>
+  <img src="Visuals\F4.jpeg" alt="F4_1" width="45%" height ="300"/>
+  <img src="Visuals\F4_h.jpeg" alt="F4_h" width="45%" height ="300"/>
 </p>
 
-Note that any reasonable $\alpha\text{ and }\beta$ can produce a well-fit curve, choosing them is trivial thanks to the power of the Shiny interactive app.  This density estimation approach fully captures the bimodal nature of the data.
+Note that any reasonable $\alpha\text{ and }\beta$ can produce a well-fit curve, choosing them is trivial by examining changes with the [Shiny Dashboard](https://catalyzeanalytics.shinyapps.io/Bayesian-KDE-ab-Slider/).  This density estimation approach fully captures the bimodal nature of the data.
 
 ## 💬 Discussion
+
+This research and analysis project demonstrate the power of nonparametric estimation models such as KDE, which captures complex distributions without needing to make strong assumptions.  Additionally, using the Bayesian framework to the bandwidth selection process allows for a robust bandwidth that adjust itself based on the data.  Finally, using an interactive dashboard such as Shiny trivializes the hyperparameter selection process by visual inspection, without the need for costly optimization.  
 
 ### Future Work
 
