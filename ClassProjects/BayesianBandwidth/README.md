@@ -131,21 +131,21 @@ $$
 
 which is the equivalent to a function of the bias and variance, thus naturally taking account of the bias-variance trade-off[<sup>[II]</sup>](#ref2):
 
-$$
+<!-- $$
 \text{MISE}(\alpha, \beta) = \int \left[ \text{Bias}^2(\hat{f}_{\alpha, \beta}(x)) + \text{Var}(\hat{f}_{\alpha, \beta}(x)) \right] dx
-$$
+$$ -->
 
 While the underlying distribution $f(x)$ is always unknown in real data, it can be estimated using a cross-validation approach such as the Least-Squares Cross-Validation (LSCV):
 
-$$
+<!-- $$
 \text{LSCV}(\alpha, \beta)=\int \hat{f}_{\alpha, \beta}^2(x) d x-\frac{2}{n} \sum_{i=1}^n \hat{f}_{-i}(X_i)
-$$
+$$ -->
 
 <!-- $$
 \text{LSCV}(\alpha, \beta)=\int \hat{f}_{\alpha, \beta}^2(x) d x-\frac{2}{n} \sum_{i=1}^n \hat{f}_{\alpha, \beta,-i}\left(X_i\right)
 $$ -->
 
-Therefore, minimizing LSCV over a grid of $\alpha \text{ and } \beta$ values will result in the optimizers $\alpha^*, \beta^\text{*}$
+Therefore, minimizing LSCV over a grid of $\alpha \text{ and } \beta$ values will result in the optimizers $\alpha^*, \beta^*$
 
 ## 🔧 Tools
 ![R](https://img.shields.io/badge/R-276DC3?style=flat&logo=r&logoColor=white)
