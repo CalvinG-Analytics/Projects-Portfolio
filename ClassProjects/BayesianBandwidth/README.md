@@ -136,7 +136,7 @@ which is the equivalent to a function of the bias and variance, thus naturally t
 $$ -->
 
 $$
-\text{MISE}(\alpha, \beta) = \int [ \text{Bias}^2(\hat{f}_{\alpha, \beta}(x)) + \text{Var}(\hat{f}_{a, b}(x)) ] dx
+\text{MISE}(\alpha, \beta) = \int [ \text{Bias}^2(\hat{f}_{\alpha, \beta}(x)) + \text{Var}(\hat{f}{\alpha, \beta}(x)) ] dx
 $$
 
 While the underlying distribution $f(x)$ is always unknown in real data, it can be estimated using a cross-validation approach such as the Least-Squares Cross-Validation (LSCV):
