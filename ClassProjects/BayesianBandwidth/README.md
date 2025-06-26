@@ -9,6 +9,7 @@
   - [📑 Methods](#-methods)
   - [📊 Results \& Visualizations](#-results--visualizations)
   - [💬 Discussion](#-discussion)
+    - [Future Work](#future-work)
   - [🔧 Tools](#-tools)
   - [🔗 Links](#-links)
   - [📚 References](#-references)
@@ -116,7 +117,19 @@ Recall that to pick a good fitting curve, it cannot be too flat nor too jagged. 
   <img src="Visuals\F4.jpeg" alt="F3b01" width="60%" height ="350"/>
 </p>
 
+Note that any reasonable $\alpha\text{ and }\beta$ can produce a well-fit curve, choosing them is trivial thanks to the power of the Shiny interactive app.  This density estimation approach fully captures the bimodal nature of the data.
+
 ## 💬 Discussion
+
+### Future Work
+
+While the Bayesian KDE approach performs well without the need to optimize, one may nonetheless wish to come up with an optimization method.  One convenient measure to judge the performance of a density estimator is the Mean Integrated Squared Error (MISE):
+
+$$
+\operatorname{MISE}(h)=\mathbb{E}\left[\int\left(\hat{f}_h(x)-f(x)\right)^2 d x\right]
+$$
+
+which can be written as the sum of the square bias and variance, thus naturally taking account of the bias-variance trade-off[<sup>[II]</sup>](#ref2):
 
 ## 🔧 Tools
 ![R](https://img.shields.io/badge/R-276DC3?style=flat&logo=r&logoColor=white)
@@ -127,7 +140,7 @@ Recall that to pick a good fitting curve, it cannot be too flat nor too jagged. 
 
 
 ## 🔗 Links
-- [Shiny App: Bayesian KDE Slider](https://catalyzeanalytics.shinyapps.io/Bayesian-KDE-ab-Slider/)
+- [Shiny Dashboard: Bayesian KDE Curve on NBA **PPG** Data](https://catalyzeanalytics.shinyapps.io/Bayesian-KDE-ab-Slider/)
 
 - [Original Class Project Report](BayesianBandwidthPaper.pdf)
 
@@ -137,3 +150,6 @@ Recall that to pick a good fitting curve, it cannot be too flat nor too jagged. 
 ## 📚 References
 <a name="ref1"></a>
 [I] [Gangopadhyay, A., & Cheung, K. (2002). Bayesian approach to the choice of smoothing parameter in kernel density estimation. *Journal of nonparametric statistics*, 14(6), 655-664.](https://www.tandfonline.com/doi/abs/10.1080/10485250215320)
+
+<a name="ref2"></a>
+[II] [Wasserman, Larry. Lecture Notes for Statistics 240: Nonparametric Statistics. University of California, Berkeley, n.d.](https://www.stat.berkeley.edu/~csun/stat240/)
