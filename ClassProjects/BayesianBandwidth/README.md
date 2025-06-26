@@ -129,7 +129,12 @@ $$
 \text{MISE}(h)=\mathbb{E}\left[\int\left(\hat{f}_h(x)-f(x)\right)^2 d x\right]
 $$
 
-which can be written as the sum of the square bias and variance, thus naturally taking account of the bias-variance trade-off[<sup>[II]</sup>](#ref2):
+which is the equivalent to a function of the bias and variance, thus naturally taking account of the bias-variance trade-off[<sup>[II]</sup>](#ref2):
+
+$$
+\mathrm{MISE} = \int \left[ \text{Bias}^2(\hat{f}(x)) + \text{Var}(\hat{f}(x)) \right] dx
+$$
+
 
 ## 🔧 Tools
 ![R](https://img.shields.io/badge/R-276DC3?style=flat&logo=r&logoColor=white)
