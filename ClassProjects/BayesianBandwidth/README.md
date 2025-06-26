@@ -147,9 +147,7 @@ $$ -->
 
 Therefore, minimizing LSCV over a grid of $\alpha \text{ and } \beta$ values will result in the optimizers $ a^*, 
 
-$$
-\beta^*
-$$
+$ \beta^* $
 
 ## 🔧 Tools
 ![R](https://img.shields.io/badge/R-276DC3?style=flat&logo=r&logoColor=white)
