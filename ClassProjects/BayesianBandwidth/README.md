@@ -67,13 +67,14 @@ $$
 $$
 
 The bandwidth $h$ acts as the standard deviation parameter of a Gaussian distribution, therefore it has the Inverse-Gamma conjugate prior: $\pi(h) \sim IG(\alpha, \beta)$.  As such, the estimated posterior distribution of $h$ has a closed-form solution:
+
 $$
 \hat{\pi}(h \mid x, \vec{X}) =
 \frac{
-\sum_{l=1}^n ( \frac{1}{h^{2\alpha+2}} ) \exp \{ -\frac{1}{h^2} ( \frac{(X_i - x)^2}{2} + \frac{1}{\beta} ) \}
+\sum\_{l=1}^n ( \frac{1}{h^{2\alpha+2}} ) \exp \{ -\frac{1}{h^2} ( \frac{(X\_i - x)^2}{2} + \frac{1}{\beta} ) \}
 }{
-\sum_{l=1}^n ( \frac{\Gamma(\alpha + 1/2)}{2} )
-( \frac{(X_i - x)^2}{2} + \frac{1}{\beta} )^{-\alpha - 1/2}
+\sum\_{l=1}^n ( \frac{\Gamma(\alpha + 1/2)}{2} )
+( \frac{(X\_i - x)^2}{2} + \frac{1}{\beta} )^{-\alpha - 1/2}
 }
 $$
 
