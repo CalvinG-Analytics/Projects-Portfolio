@@ -126,7 +126,7 @@ Note that any reasonable $\alpha\text{ and }\beta$ can produce a well-fit curve,
 While the Bayesian KDE approach performs well without the need to optimize, one may nonetheless wish to come up with an optimization method.  One convenient measure to judge the performance of a density estimator is the Mean Integrated Squared Error (MISE):
 
 $$
-\operatorname{MISE}(h)=\mathbb{E}\left[\int\left(\hat{f}_h(x)-f(x)\right)^2 d x\right]
+\text{MISE}(h)=\mathbb{E}\left[\int\left(\hat{f}_h(x)-f(x)\right)^2 d x\right]
 $$
 
 which can be written as the sum of the square bias and variance, thus naturally taking account of the bias-variance trade-off[<sup>[II]</sup>](#ref2):
