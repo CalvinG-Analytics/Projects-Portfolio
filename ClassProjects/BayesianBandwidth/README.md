@@ -142,8 +142,9 @@ $$
 $$
 
 $$
-\text{LSCV}(\alpha{}, \beta{})=
+\text{LSCV}(\alpha, \beta)
 $$
+
 Therefore, minimizing LSCV over a grid of $\alpha \text{ and } \beta$ values will result in the optimizers $\alpha^*, \beta^*$
 
 ## 🔧 Tools
