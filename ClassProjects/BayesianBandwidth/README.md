@@ -132,7 +132,7 @@ $$
 which is the equivalent to a function of the bias and variance, thus naturally taking account of the bias-variance trade-off[<sup>[II]</sup>](#ref2):
 
 $$
-\mathrm{MISE} = \int \left[ \text{Bias}^2(\hat{f}(x)) + \text{Var}(\hat{f}(x)) \right] dx
+\mathrm{MISE}(h) = \int \left[ \text{Bias}^2(\hat{f}_h(x)) + \text{Var}(\hat{f}_h(x)) \right] dx
 $$
 
 
