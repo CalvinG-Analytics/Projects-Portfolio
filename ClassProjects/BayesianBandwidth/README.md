@@ -142,7 +142,7 @@ $$
 $$
 
 $$
-\int \hat{f}_{\alpha, \beta}^2(x) d x
+frac{2}{n} \sum_{i=1}^n 
 $$
 
 Therefore, minimizing LSCV over a grid of $\alpha \text{ and } \beta$ values will result in the optimizers $\alpha^*, \beta^*$
